@@ -1,4 +1,4 @@
-package com.vasu.AlgoWorkspace.MiscellaneousProblems;
+package com.vasu.AlgoWorkspace.LeetCode;
 
 public class AddBinary {
     public static void main(String[] args) {

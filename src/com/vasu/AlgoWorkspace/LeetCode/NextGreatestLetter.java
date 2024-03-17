@@ -1,4 +1,4 @@
-package com.vasu.AlgoWorkspace.MiscellaneousProblems;
+package com.vasu.AlgoWorkspace.LeetCode;
 
 public class NextGreatestLetter {
     public char nextGreatestLetter(char[] letters, char target) {

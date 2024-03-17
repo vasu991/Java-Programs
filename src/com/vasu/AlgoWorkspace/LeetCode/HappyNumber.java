@@ -1,4 +1,4 @@
-package com.vasu.AlgoWorkspace.MiscellaneousProblems;
+package com.vasu.AlgoWorkspace.LeetCode;
 class HappyNumber {
    public boolean isHappy(int n) {
        int slow = n;

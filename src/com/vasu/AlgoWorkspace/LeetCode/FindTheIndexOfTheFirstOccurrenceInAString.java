@@ -1,4 +1,4 @@
-package com.vasu.AlgoWorkspace.MiscellaneousProblems;
+package com.vasu.AlgoWorkspace.LeetCode;
 
 public class FindTheIndexOfTheFirstOccurrenceInAString {
     public static void main(String[] args) {
