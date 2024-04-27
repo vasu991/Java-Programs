@@ -76,6 +76,8 @@ public class LL {
 
     }
 
+
+
     public boolean hasCycle(LL list) {
         Node fast = list.head;
         Node slow  = list.head;
@@ -187,6 +189,33 @@ public class LL {
         }
         size--;
         return val;
+    }
+
+    public LL rotateList(LL l, int k) {
+         k = k % l.size;
+         if(k == 0) {
+            return l;
+        }
+        LL rl = new LL();
+        rl.head = new Node(0);
+        Node head1 = rl.head;
+        Node temp1 = l.head;
+        Node temp2 = l.get(l.size - k);
+
+        for(int i = 0; i < size; i++) {
+            if(temp2 != null) {
+                rl.insertLast(temp2.value);
+                temp2 = temp2.next;
+            }
+            else {
+                rl.insertLast(temp1.value);
+                temp1 = temp1.next;
+            }
+        }
+
+        return rl;
+
+
     }
 
 
