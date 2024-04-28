@@ -198,7 +198,6 @@ public class LL {
         }
         LL rl = new LL();
         rl.head = new Node(0);
-        Node head1 = rl.head;
         Node temp1 = l.head;
         Node temp2 = l.get(l.size - k);
 
