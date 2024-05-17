@@ -13,10 +13,7 @@ public class Main {
         list1.insertFirst(2);
         list1.insertFirst(1);
         displayList(list1);
-        LL list2;
-        list2 = list1.rotateList(list1, 10);
-        displayList(list2);
-
+        displayList(list1);
     }
 
     private static void display(LL list) {
