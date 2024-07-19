@@ -1,5 +1,8 @@
 package com.vasu.AlgoWorkspace.LL;
 
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 public class LL {
 
     private Node head;
@@ -76,6 +79,34 @@ public class LL {
 
     }
 
+    public LL partition(LL list, int x) {
+        LL newList = new LL();
+        Node curr = list.head;
+        Queue<Integer> que = new ConcurrentLinkedQueue<>();
+
+        Node start = new Node(0);
+        newList.head = start;
+
+        while(curr != null) {
+            if(curr.value < x) {
+                Node node = new Node(curr.value);
+                start.next = node;
+                start = start.next;
+            }
+            else {
+                que.add(curr.value);
+            }
+            curr = curr.next;
+        }
+        while(que.size() > 0) {
+            Node node = new Node(que.poll());
+            start.next = node;
+            start = start.next;
+        }
+        newList.head = newList.head.next;
+        return newList;
+    }
+
 
 
     public boolean hasCycle(LL list) {
@@ -92,6 +123,34 @@ public class LL {
         return false;
 
 
+    }
+
+    public static int[] nextLargerNodes(Node head) {
+        // Convert linked list to ArrayList for easier access
+        ArrayList<Integer> values = new ArrayList<>();
+        Node curr = head;
+        while (curr != null) {
+            values.add(curr.value);
+            curr = curr.next;
+        }
+
+        int[] answer = new int[values.size()];
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < values.size(); i++) {
+            // Maintain the stack to store indices of values
+            while (!stack.isEmpty() && values.get(stack.peek()) < values.get(i)) {
+                answer[stack.pop()] = values.get(i);
+            }
+            stack.push(i);
+        }
+
+        // Any index left in stack means there was no greater value to the right
+        while (!stack.isEmpty()) {
+            answer[stack.pop()] = 0;
+        }
+
+        return answer;
     }
 
     public int lengthOfCycle(LL list) {
